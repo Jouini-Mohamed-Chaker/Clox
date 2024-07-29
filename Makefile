@@ -1,6 +1,6 @@
-CC = gcc
+CC = clang
 CFLAGS = -Wall -Wextra -std=c11
-OBJ = main.o memory.o chunk.o
+OBJ = main.o memory.o chunk.o debug.o
 
 clox: $(OBJ)
 	$(CC) $(OBJ) -o clox
