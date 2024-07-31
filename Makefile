@@ -1,6 +1,11 @@
 CC = clang
 CFLAGS = -Wall -Wextra -std=c11
-OBJ = main.o memory.o chunk.o debug.o value.o
+
+# Automatically find all .c files in the current directory
+SRC = $(wildcard *.c)
+
+# Replace .c with .o to get the list of object files
+OBJ = $(patsubst %.c,%.o,$(SRC))
 
 clox: $(OBJ)
 	$(CC) $(OBJ) -o clox
