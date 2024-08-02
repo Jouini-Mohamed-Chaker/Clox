@@ -1,4 +1,3 @@
-#include <cctype>
 #include <stdio.h>
 #include <string.h>
 
@@ -113,7 +112,7 @@ static void skipWhitespace()
 
 static TokenType checkKeyword(int start, int length, const char* rest, TokenType type)
 {
-    if (scanner.current - scanner.start == start + length && memmcmp(scanner.start + start, rest, length) == 0) {
+    if (scanner.current - scanner.start == start + length && memcmp(scanner.start + start, rest, length) == 0) {
         return type;
     }
     return TOKEN_IDENTIFIER;
